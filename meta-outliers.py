@@ -1,49 +1,5 @@
 #!/usr/bin/env python
-
-# script name: meta-outliers.py
-# 
-# In the spirit of release early, release often, here's a script
-# that's part of a larger project I'm working on.
 #
-# What does it do?
-# Parses the output from the Sleuth Kit's fls command.
-# More specifically fls -arp run against a disk image or dev.
-#
-# "Fantastic," you say. "What does fls -arp do?"
-#
-# fls -arp returns file type, deleted status, metadata address
-# and full path information.
-#
-# "Hm, not much to that fls output. What does it parse from fls?"
-#
-# meta-outliers.py goes through the output of fls and returns
-# the average metadata address and the standard deviation on
-# a per path basis and returns a list of all files that have
-# metadata addresses outside the standard deviation for their
-# directory. It shows you a list of outliers, hence the name.
-#
-# "Why should I care?"
-#
-# You need more useless trivia in your life. This will help.
-# At parties you'll say "On my Win7 box the metadata address of my
-# SAM file is two standard deviations from normal."
-#
-# You win.
-#
-# Alternatively, you may be able to use this to find suspicious
-# files in random file systems. But probably not. In my limited
-# testing, this does greatly reduce the data set from hundreds
-# of thousands of files, to a few thousand or a few hundred.
-# But that's still more noise than most people want to deal
-# with. So, there's more to come. 
-#
-# Release early. Release often.
-#
-# To use it: ./meta-outliers.py <fls_output>
-#
-# Adjust the stddevs value below to change what's considered
-# an outlier.
-# 
 # Author: Dave Hull
 # License: We don't need no stinking license. I hereby place
 # this in the public domain.
