@@ -5,14 +5,8 @@
 #
 # What does it do?
 # Parses the output from the Sleuth Kit's fls command.
-# More specifically fls -arp run against a disk image or dev.
-#
-# "Fantastic," you say. "What does fls -arp do?"
-#
-# fls -arp returns file type, deleted status, metadata address
-# and full path information.
-#
-# "Hm, not much to that fls output. What does it parse from fls?"
+# Either fls -ap or fls -arp or an fls bodyfile. For more information on
+# fls, check out Brian Carrier's The Sleuth Kit.
 #
 # meta-outliers.py goes through the output of fls and returns
 # the average metadata address and the standard deviation on
@@ -37,11 +31,8 @@
 #
 # Release early. Release often.
 #
-# To use it: ./meta-outliers.py <fls_output>
+# For usage info: ./meta-outliers.py -h
 #
-# Adjust the stddevs value below to change what's considered
-# an outlier.
-# 
 # Author: Dave Hull
 # License: We don't need no stinking license. I hereby place
 # this in the public domain.
